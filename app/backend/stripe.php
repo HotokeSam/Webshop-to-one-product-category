@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 require '../../stripe/vendor/autoload.php';
 
-\Stripe\Stripe::setApiKey("sk_test_51QH80oCegCNZBL3TsI2xcdmOcAUqW269qCjxN7zuUmIhk97QvfMmgKovl3oLWm71UDswsGymETkxcTan56yeXsXD00DFOkHOhH");
+\Stripe\Stripe::setApiKey("...");
 try {
     $session = \Stripe\Checkout\Session::create([
         "payment_method_types" => ['card'],

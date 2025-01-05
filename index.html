@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400;1,700&family=Grandiflora+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+        <link rel="stylesheet" href="/view/style/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">    
+        <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VroomVroomTuning</title>
+    </head>
+    <body>
+        <div class="overlay hidden"></div>
+        <div class="header-section">
+            <div class="content-bx">
+                <div class="header row">
+                    <div class="col-md-6 header-logo">
+                        <a href="/"><img class="logo" src="/view/uploads/feliratget.png" alt=""></a>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a href="/cart">
+                            <button class="cart-icon">
+                                <div class="cart-item-count"></div>
+                                <i class="las la-shopping-cart"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app">
+            <div data-page="payment-fail" class="payment-fail hidden">
+                <div class="content-bx">
+                    <div class="container">
+                        <i class="las la-times"></i>
+                        <h2>Sikertelen tranzakció</h2>
+                        <p>Fizetés elutasítva!</p>
+                    </div>
+                </div>
+            </div>
+            <div data-page="payment-success" class="payment-success hidden">
+                <div class="content-bx">
+                    <div class="container">
+                        <i class="las la-check"></i>
+                        <h2>Sikeres Vásárlás!</h2>
+                        <p>További információkat az email fiókodra elküldjük hamarosan! Köszönjük a vásárlást!</p>
+                    </div>
+                </div>
+            </div>
+            <div data-page="cart" class="cart hidden">
+                <div class="content-bx row">
+                    <div class="col-md-8">
+                        <div class="inputs">
+                            <h2>Kosár - Számlázási adatok</h2>
+                            <div class="inputs-invoice-info row">
+                                <div class="input-group col-md-6 required">
+                                    <label for="surname">Vezetéknév <span>*</span></label>
+                                    <input type="text" name="surname">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label for="lastname">Keresztnév <span>*</span></label>
+                                    <input type="text" name="lastname">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label class="mail-l" for="email">E-mail cím <span>*</span></label>
+                                    <input type="email" name="email">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label for="tel">Telefonszám <span>*</span></label>
+                                    <input type="tel" name="phone">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label for="zipcode">Irányítószám <span>*</span></label>
+                                    <input type="text" inputmode="numeric" name="zipcode" maxlength="4" pattern="\d*">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label for="address">Város <span>*</span></label>
+                                    <input type="text" name="city">
+                                </div>
+                                <div class="input-group col-md-6 required">
+                                    <label for="address">Utca, házszám <span>*</span></label>
+                                    <input type="text" name="address">
+                                </div>
+                                <div class="input-group col-md-6">
+                                    <label for="tax-num">Adószám</label>
+                                    <input type="text" name="taxnum">
+                                </div>
+                            </div>
+                            <div class="shipping-informations">
+                                <h2>Szállítási adatok</h2>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="same-delivery-info">
+                                    <span>Szállítási adatok megegyeznek a számlázási adatokkal</span>
+                                </label>
+                                <div class="inputs-dif-delivery-info row">
+                                    <div class="input-group col-md-6 required">
+                                        <label for="surname">Vezetéknév <span>*</span></label>
+                                        <input type="text" name="surname">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label for="lastname">Keresztnév <span>*</span></label>
+                                        <input type="text" name="lastname">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label class="mail-l" for="email">E-mail cím <span>*</span></label>
+                                        <input type="email" name="email">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label for="tel">Telefonszám <span>*</span></label>
+                                        <input type="tel" name="phone">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label for="zipcode">Irányítószám <span>*</span></label>
+                                        <input type="text" inputmode="numeric" name="zipcode" maxlength="4" pattern="\d*">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label for="address">Város <span>*</span></label>
+                                        <input type="text" name="city">
+                                    </div>
+                                    <div class="input-group col-md-6 required">
+                                        <label for="address">Utca, házszám <span>*</span></label>
+                                        <input type="text" name="address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shipping-method row">
+                                <div class="delivery-container">
+                                    <h2 class="col-md-12">Szállítási módok</h2>
+                                    <div class="col-md-6">
+                                        <div class="options-card" data-func="select-shipment" data-shipment-id="3">
+                                            <h2>GLS Házhozszállítás</h2>
+                                            <span>1500 Ft</span>
+                                            <p>3-5 Munkapnap</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="options-card" data-func="select-shipment" data-shipment-id="2">
+                                            <h2>MPL Házhozszállítás</h2>
+                                            <span>1500 Ft</span>
+                                            <p>3-5 Munkapnap</p>
+                                        </div>
+                                    </div>
+                                    <div class="express col-md-4 hidden">
+                                        <div class="options-card" data-func="select-shipment" data-shipment-id="6">
+                                            <h2>Express Házhozszállítás*</h2>
+                                            <span>1500 Ft</span>
+                                            <p>3-5 Munkapnap</p>
+                                        </div>
+                                    </div>
+                                    <p class="extra-info col-md-12 hidden">
+                                        <b>* = Saját magunk visszük el számodra a megrendelést Észak-Kelet Magyarországon! Szállítási idő maximum 4 nap!</b>
+                                        A rendelésed több csomagban érkezhet, erről e-mailben vagy telefonon értesítünk. Visszajelzésedre lehet szükség a magasabb költségek miatt. <br />
+                                       <b>Több futómű rendelése esetén magasabb szállítási díj lehet!</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="payment-method row">
+                                <h2 class="col-md-12">Fizetési Módok</h2>
+                                <div class="col-md-6">
+                                    <div class="options-card" data-payment-id="4" data-func="select-payment">
+                                        <h2>Banki Utalás</h2>
+                                        <i class="las la-university"></i>
+                                        <span>200 Ft</span>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="options-card" data-payment-id="6" data-func="select-payment">
+                                        <h2>Online Bankkártyás Fizetés</h2>
+                                        <i class="las la-credit-card"></i>
+                                        <span>Díjmentes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inner-cart col-md-4">
+                        <div class="cart-content">
+                            <h2>Kosár Tartalma</h2>
+                            <div class="items">
+                                <div class="item-card row" data-temp="cart-item">
+                                    <div class="col-md-4">
+                                        <img src="/view/uploads/product/ap-made-by-kw.png" alt="">
+                                    </div>
+                                    <div class="item-data col-md-8">
+                                        <a data-field="product_name" href="/">AP made by KW Honda Civic, CRX, Coupé (Typ: EG2-6, 8, 9, EH6, 9, EJ12), 1992.04-1995.09-ig állítható magasságú futómű</a>
+                                        <span data-field="price" class="price">0 000 000 Ft</span> <br />
+                                        <button data-func="remove.from-cart" class="delete"><i class="las la-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="all-price col-md-12">Összesen: <span>0 Ft</span></h2>
+                            <input type="text" name="cupon" placeholder="Írd be ide a kuponkódod!">
+                            <button class="submit-cupon">Alkalmaz</button>
+                            <div class="other-info">
+                                <label for="other-comment">Megjegyzés:</label>
+                                <textarea name="other-comment" id="" width="100%" height="300px"></textarea>
+                            </div>
+                            <div class="contract-request">
+                                <label>
+                                    <input type="checkbox" name="contract-request">
+                                    Elfogadom az <a href="/">általános szerződési feltételeket!</a>
+                                </label>
+                            </div>
+                            <button data-func="send.order" disabled class="take-order">Rendelés Leadása</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main hidden" data-page="main">
+                <div class="hero">
+                    <div class="owl-carousel">
+                        <div class="item"><img src="/view/uploads/product/ap-made-by-kw.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/v-maxx.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/vogtland.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/eibach.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/fk-automotive.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/jom_bochum.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/mts-technik.png" alt=""></div>
+                        <div class="item"><img src="/view/uploads/product/bilstein.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="car-switcher row">
+                    <div class="car-brand col-md-4">
+                        <div class="car-switch car-switch-brand">
+                            <h2>Márka</h2>
+                            <select class="brand_categ" name="brand">
+                                <option>Válasszd ki az autód márkáját!</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="car-type col-md-4">
+                        <div class="car-switch car-switch-type">
+                            <h2>Típus</h2>
+                            <select name="type" class="brand-type">
+                                <option value="">Válasszd ki az autód típusát!</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="car-subtype col-md-4">
+                        <div class="car-switch car-switch-subtype">
+                            <h2>Altípus</h2>
+                            <select name="subtype">
+                                <option value="">Válaszd ki az autód altípusát</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="product hidden">
+                    <div class="content-bx row">
+                        <div class="col-md-12">
+                            <div class="product-card row">
+                                <div class="product-pic col-md-4">
+                                    <div class="tuv-card">TÜV Engedélyes</div>
+                                    <img src="/view/uploads/product/ap-made-by-kw.png" alt="">
+                                </div>
+                                <div class="product-details col-md-8">
+                                    <h2 data-field="product_name">Product name</h2>
+                                    <div class="product-desc" data-field="product_desc"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi totam officiis ad quidem dolore cumque, recusandae corrupti voluptatum odit omnis. Nobis sint ipsum deleniti neque blanditiis, harum quo sunt hic reprehenderit nesciunt, perspiciatis illum quam ullam expedita nam minus corporis voluptatum! Est consequatur eum deleniti, suscipit dolorum repellat sunt ipsa?</div>
+                                    <div class="product-price">
+                                        <span data-field="price">00 000 000 Ft</span>
+                                        <button data-func="take-cart" class="take-cart"><i class="las la-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-section row">
+                    <div class="trust-card col-md-4">
+                        <i class="las la-shipping-fast"></i>
+                        <h2>Gyors szállítás</h2>
+                        <p>Akár 2 napon belül az egész országban!</p>
+                    </div>
+                    <div class="trust-card col-md-4">
+                        <i class="las la-check-circle"></i>
+                        <h2>Kiváló Minőség</h2>
+                        <p>Vásárlói értékelések alapján!</p>
+                    </div>
+                    <div class="trust-card col-md-4">
+                        <h2 class="refund-icon">30</h2>
+                        <h2>Nem tetszik a termék?</h2>
+                        <p>Semmi pánik! 30 napon belül kicserélheted!</p>
+                    </div>
+                </div>
+                <div class="partners row">
+                    <div class="col-md-6">
+                        <div class="partner-card">
+                            <h2>Szállítási Partnereink</h2>
+                            <div class="partner-logo">
+                                <span><img class="gls" src="/view/uploads/GLS_Logo_2021_RGB_GLSBlue_-_white_background.svg" alt=""></span>
+                                <span><img class="mpl" src="/view/uploads/magyar-posta-logo-vector.svg" alt=""></span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nam itaque eum ullam maxime recusandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nam itaque eum ullam maxime recusandae?</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="partner-card">
+                            <h2>Fizetési módjaink</h2>
+                            <div class="partner-logo">
+                                <span><img class="stripe" src="/view/uploads/Stripe_Logo,_revised_2016.svg.png" alt=""></span>
+                                <span><i class="las la-money-bill"></i></span>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nam itaque eum ullam maxime recusandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nam itaque eum ullam maxime recusandae?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="content-bx">
+                <div class="footer-container row">
+                    <div class="col-md-4">
+                        <div class="footer-card">
+                            <h2>Csatlakozz hozzánk, kövess minket!</h2>
+                            <div class="fb-page" data-href="https://www.facebook.com/vroomvroomtuning" data-tabs="timeline" data-width="" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/vroomvroomtuning" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vroomvroomtuning">VroomVroom Tuning</a></blockquote></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-card socials">
+                            <h2>Keress minket</h2>
+                            <a href="tel:+36307478504"><i class="las la-phone"></i><span>+36 30 747 8504</span></a>
+                            <a href="mailto:info@vroomvroomtuning.hu"><i class="las la-envelope"></i><span>info@vroomvroomtuning.hu</span></a>
+                            <a href="https://www.facebook.com/vroomvroomtuning"><i class="lab la-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-card menu">
+                            <h2>Információk</h2>
+                            <a href="https://vroomvroomtuning.hu/hazhozszallitas">Házhozszállítás</a>
+                            <a href="https://vroomvroomtuning.hu/impresszum">Impresszum</a>
+                            <a href="https://vroomvroomtuning.hu/altalanos-szerzodesi-feltetelek-aszf">Általános Szerződési Feltételek</a>
+                            <a href="https://vroomvroomtuning.hu/adatkezelesi-tajekoztato">Adatkezelési Tájékoztató</a>
+                            <a href="https://vroomvroomtuning.hu/vasarlasi-es-szallitasi-informaciok">Szállítási és Fizetési Feltételek</a>
+                            <a href="https://vroomvroomtuning.hu/panaszkezeles">Panaszkezelés</a>
+                            <a href="https://vroomvroomtuning.hu/elallasi-nyilatkozat">Elállási Nyilatkozat</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom row">
+                    <div class="col-md-6">
+                        <span>Az Online Bankkártyás Fizetést a Stripe biztosítja.
+                            VISA, Mastercard, Maestro</span>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <span>Áraink ÁFA mentesek | Minden jog fenntartva! | VroomVroomTuning 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v21.0"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" ></script>
+        <script src="/app/js/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+        <script src="/app/js/script.js?v=00002"></script>
+    </body>
+</html>
